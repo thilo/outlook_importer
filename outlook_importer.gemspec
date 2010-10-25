@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
     "README.md",
      "Rakefile",
      "VERSION",
+     "outlook_importer.gemspec",
      "outlook_importer.rb",
      "test/livemail_de.csv",
      "test/outlook_2007_de.csv",
