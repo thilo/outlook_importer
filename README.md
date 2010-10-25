@@ -18,11 +18,11 @@ After initialization let the importer read a file and you can access you contact
     importer.read('example.csv')
     importer.contacts # => [["Robin Example", "robin@example.de"]]
 
-For further reference please see the outlook importer test attached to this project.
+For further reference please see the outlook importer test in this project.
 
 
 # CREDITS
-
+Payango GmbH for allowing us to open source this lib.
 Robin Mehner for sharing the Outlook CSV test files.
 Frank Prößdorf
 Thilo Utke

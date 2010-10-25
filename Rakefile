@@ -5,13 +5,14 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "outlook_importer"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
-    gem.email = "thilo@upstream-berlin.com"
+    gem.summary = "Simple importer for outlook and alike csv files"
+    gem.description = "Nothing more to say"
+    gem.email = "dont@bother.me"
     gem.homepage = "http://github.com/thilo/outlook_importer"
-    gem.authors = ["Thilo Utke"]
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    gem.authors = ["Frank Prößdorf, Thilo Utke"]
+    gem.add_dependency "fastercsv", ">= 0"
+    gem.add_developer_dependency "test-unit", ">= 0"
+    gem.has_rdoc = false
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
