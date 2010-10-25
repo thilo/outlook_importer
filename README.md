@@ -22,10 +22,10 @@ For further reference please see the outlook importer test in this project.
 
 
 # CREDITS
-Payango GmbH for allowing us to open source this lib.
-Robin Mehner for sharing the Outlook CSV test files.
-Frank Prößdorf
-Thilo Utke
+ * Payango GmbH for allowing us to open source this lib.
+ * Robin Mehner for sharing the Outlook CSV test files.
+ * Frank Prößdorf
+ * Thilo Utke
 
 # LICENSE
 

@@ -10,8 +10,8 @@ begin
     gem.email = "dont@bother.me"
     gem.homepage = "http://github.com/thilo/outlook_importer"
     gem.authors = ["Frank Prößdorf, Thilo Utke"]
-    gem.add_dependency "fastercsv", ">= 0"
-    gem.add_developer_dependency "test-unit", ">= 0"
+    gem.add_dependency "fastercsv", ">= 1.5.0"
+    gem.add_development_dependency "test-unit", ">= 1.2.3"
     gem.has_rdoc = false
   end
   Jeweler::GemcutterTasks.new
