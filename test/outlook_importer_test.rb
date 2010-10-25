@@ -38,6 +38,13 @@ class OutlookImporterTest < Test::Unit::TestCase
     assert_equal importer.contacts.first, ["Robin Example", "robin@example.de"]    
   end
   
+  def test_read_from_a_file
+    importer = OutlookImporter.new
+    importer.read(File.new('livemail_de.csv'))
+    
+    assert_equal importer.contacts.first, ["Robin Example", "robin@example.de"]
+  end
+  
   def test_initilize_raise_invalid_argument_error_if_lookup_not_satisfied
     assert_raise ArgumentError do
       importer = OutlookImporter.new(:firstname => '', :lastname => '', :email => '')

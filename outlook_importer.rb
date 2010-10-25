@@ -9,9 +9,10 @@ class OutlookImporter
     end
   end
   
-  def read(file_path)
-    separator = File.new(file_path).gets.match(/([,;])[^,;]+\n/)[1]
-    @csv = FasterCSV.read(file_path, :headers => true, :col_sep => separator)
+  def read(file_or_path)
+    file = file_or_path.respond_to?(:path) ? file_or_path : File.new(file_or_path)
+    separator = file.gets.match(/([,;])[^,;]+\n/)[1]
+    @csv = FasterCSV.read(file.path, :headers => true, :col_sep => separator)
     @mapping = find_lookup_table.invert unless @mapping
     assign_header_columns(@csv.headers)
   end
