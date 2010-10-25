@@ -13,10 +13,18 @@ Initialize the importer with a lookup table that specifies which strings in the 
     }
     importer = OutlookImporter.new(lookup_table)
 
+If you don't specify a lookup table, the importer tries to guess one using the CSV headers.
+
+    importer = OutlookImporter.new
+
 After initialization let the importer read a file and you can access you contacts via the contacts method. 
 
     importer.read('example.csv')
     importer.contacts # => [["Robin Example", "robin@example.de"]]
+
+Instead of a path, you can also provide a file.
+
+    importer.read(File.new('example.csv'))
 
 For further reference please see the outlook importer test in this project.
 
@@ -26,6 +34,7 @@ For further reference please see the outlook importer test in this project.
  * Robin Mehner for sharing the Outlook CSV test files.
  * Frank Prößdorf
  * Thilo Utke
+
 
 # LICENSE
 

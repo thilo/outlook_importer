@@ -1,2 +1,2 @@
 require 'test/unit'
-require File.dirname(__FILE__) + '/../outlook_importer'
+require File.dirname(__FILE__) + '/../lib/outlook_importer'
