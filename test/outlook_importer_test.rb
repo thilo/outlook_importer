@@ -22,7 +22,20 @@ class OutlookImporterTest < Test::Unit::TestCase
     importer.read('livemail_de.csv')
     
     assert_equal importer.contacts.first, ["Robin Example", "robin@example.de"]
+  end
+  
+  def test_read_outlook_contacts_without_providing_a_lookup_table
+    importer = OutlookImporter.new
+    importer.read('outlook_2007_de.csv')
     
+    assert_equal importer.contacts.first, ["Robin Example", "robin@example.de"]    
+  end
+
+  def test_read_livemail_contacts_without_providing_a_lookup_table
+    importer = OutlookImporter.new
+    importer.read('livemail_de.csv')
+    
+    assert_equal importer.contacts.first, ["Robin Example", "robin@example.de"]    
   end
   
   def test_initilize_raise_invalid_argument_error_if_lookup_not_satisfied

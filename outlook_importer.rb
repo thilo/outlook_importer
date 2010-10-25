@@ -2,14 +2,17 @@ require 'rubygems'
 require 'fastercsv'
 
 class OutlookImporter
-  def initialize(mapping)
-    @mapping = mapping.invert
-    raise ArgumentError unless valid_arguments?
+  def initialize(mapping = nil)
+    if mapping
+      @mapping = mapping.invert
+      raise ArgumentError unless valid_arguments?
+    end
   end
   
   def read(file_path)
     separator = File.new(file_path).gets.match(/([,;])[^,;]+\n/)[1]
     @csv = FasterCSV.read(file_path, :headers => true, :col_sep => separator)
+    @mapping = find_lookup_table.invert unless @mapping
     assign_header_columns(@csv.headers)
   end
   
@@ -68,4 +71,27 @@ class OutlookImporter
   def joined_arguments?
     @joined_arguments ||= @header_column_indices.include?(:name)
   end
+  
+  def find_lookup_table
+    lookup_tables.each do |key, mapping|
+      return mapping if mapping.values - @csv.headers == []        
+    end
+  end
+  
+  def lookup_tables
+    {
+      :livemail =>
+        {
+          :name => 'Name',
+          :email => 'E-Mail-Adresse'
+        },
+      :outlook =>
+        {
+          :firstname => 'Vorname',
+          :lastname => 'Nachname',
+          :email => 'E-Mail-Adresse'
+        }
+    }
+  end
+  
 end
