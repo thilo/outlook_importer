@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{outlook_importer}
-  s.version = "0.3.0"
+  s.version = "0.3.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Frank Pr\303\266\303\237dorf, Thilo Utke"]
@@ -19,8 +19,9 @@ Gem::Specification.new do |s|
     "README.md",
      "Rakefile",
      "VERSION",
+     "lib/outlook_importer.rb",
      "outlook_importer.gemspec",
-     "outlook_importer.rb",
+     "pkg/outlook_importer-0.1.0.gem",
      "test/livemail_de.csv",
      "test/outlook_2007_de.csv",
      "test/outlook_importer_test.rb",
